@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+destination = File.join(Dir.pwd, ARGV.fetch(0))
+source = File.join(File.dirname(__FILE__), '../sh')
+
+FileUtils.cp_r(Dir[File.join(source, '*')], destination)

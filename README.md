@@ -8,6 +8,13 @@ This is a helper package for my own projects
 gem 'calevipoeg-zeus', require: 'zeus'
 ```
 
+To copy `shell` scripts into the project `/bin` folder
+please run:
+
+```bash
+bundle exec zeus:copy bin/
+```
+
 ## SSH Tunneling
 
 ```ruby
