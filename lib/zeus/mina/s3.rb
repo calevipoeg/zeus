@@ -20,7 +20,7 @@ namespace :s3 do
     end
   end
 
-  task :clean, %i[prefix last_mod] => :client do |_t, argv|
+  task :clean, %i[prefix last_mod] do |_t, argv|
     Zeus::S3Iterate.new(fetch(:s3_client)).delete_if(bucket: fetch(:s3_bucket), prefix: argv.prefix) do |file|
       break(false) unless argv.last_mod >= file.last_modified
 
