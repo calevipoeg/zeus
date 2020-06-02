@@ -70,12 +70,14 @@ end
 ## Mina tasks
 
 ```ruby
+require 'zeus'
 require 'zeus/mina/make'
 
 invoke :make, 'docker:push'
 ```
 
 ```ruby
+require 'zeus'
 require 'zeus/mina/docker_service'
 
 invoke :make, 'docker:push'
@@ -83,6 +85,7 @@ invoke :'docker_service:update', 'app', '--force --with-registry-auth --image ht
 ```
 
 ```ruby
+require 'zeus'
 require 'zeus/mina/s3'
 
 set :s3_client, -> do
