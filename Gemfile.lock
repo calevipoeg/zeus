@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    zeus (0.1.0)
+    calevipoeg-zeus (0.1.3)
 
 GEM
   remote: https://rubygems.org/
@@ -26,9 +26,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  calevipoeg-zeus!
   rake
   rspec
-  zeus!
 
 BUNDLED WITH
    2.1.4

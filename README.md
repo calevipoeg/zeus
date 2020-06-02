@@ -66,3 +66,33 @@ ensure
   pg.unlink
 end
 ```
+
+## Mina tasks
+
+```ruby
+require 'zeus/mina/make'
+
+invoke :make, 'docker:push'
+```
+
+```ruby
+require 'zeus/mina/docker_service'
+
+invoke :make, 'docker:push'
+invoke :'docker_service:update', 'app', '--force --with-registry-auth --image http://example.com'
+```
+
+```ruby
+require 'zeus/mina/s3'
+
+set :s3_client, -> do
+  Aws::S3::Client.new
+end
+
+set :s3_bucket, -> do
+  'hole' 
+end
+
+invoke :'s3:upload', ["public/static"], "cdn/production/static"
+invoke :'s3:clean', 'cdn/production/static', 14.days.ago
+```
