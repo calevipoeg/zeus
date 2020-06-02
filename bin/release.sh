@@ -2,5 +2,4 @@
 
 rm ./*.gem
 gem build zeus.gemspec
-gem push zeus-*
-
+gem push calevipoeg-zeus-*
