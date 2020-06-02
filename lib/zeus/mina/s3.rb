@@ -13,7 +13,7 @@ namespace :s3 do
         key = Pathname.new(argv.destination).join(path)
         io = Zeus::S3Io.new(File.open(file))
 
-        io.upload(fetch(:s3_client), bucket: fetch(:s3_bucket), key: String(key)) do |progress|
+        io.upload(fetch(:s3_client), bucket: fetch(:s3_bucket), acl: 'public-read', key: String(key)) do |progress|
           puts "[#{progress}%] Uploading #{file} -> #{key}"
         end
       end
